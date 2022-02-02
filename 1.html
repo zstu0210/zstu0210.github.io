@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+  <SCRIPT LANGUAGE="JavaScript">
+        function onload(){
+
+        }
+        function fnChange(){
+        }
+        function onClear(){
+                document.getElementById("vipurl").value="";
+        }
+        function onPlay(){
+                var oJK = document.getElementById("jk");
+                var sJK=oJK.options[oJK.selectedIndex].value;
+                var sVipUrl = document.getElementById("vipurl").value;
+                var oWin = document.getElementById("play");
+                if (sVipUrl.length>0){
+                        oWin.src=sJK + sVipUrl;
+                }else{
+                    alert("请输入链接！");
+                }
+        }
+
+  </SCRIPT>
+  <title>    免费VIP播放器网页版    </title>
+</head>
+<body onload="onload()" background="https://s3.bmp.ovh/imgs/2022/02/ebc19a8fb80f55a6.jpg">
+<table  width="100%" height="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+<tr>
+        <td><iframe src="" name="play" id="play" width="100%" align="center" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe></td>
+</tr>
+<tr>
+        <td><a style="color:red;">把需要播放的VIP视频链接粘贴到输入框中，然后点击播放即可</a></td>
+</tr>
+<tr>
+        <td><a style="color:red;">解析接口均来源于网络收集，侵权请联系删除</a></td>
+</tr>
+<tr>
+        <td><a style="color:red;">解析接口如有问题，<a href="http://wpa.qq.com/msgrd?v=3&uin=3590333333&site=qq&menu=yes">点击联系作者</a></a></td>
+</tr>
+<tr>
+        <td>
+                <form method="post" action="">
+                <select name="jk" id="jk" size=1 onchange="fnChange()">
+                        <option value="https://jx.parwix.com:4433/player/?url=" selected>线路1</option>
+
+                        <option value="https://lecurl.cn/?url=" selected>线路2</option>
+                </select>
+                <input type="text" name="vipurl" id="vipurl" value="">
+                <input type="button" value="播放" onclick="onPlay()">
+                <input type="button" value="清除" onclick="onClear()">
+               
+         </form>
+         </td>
+</tr>
+</table>
+</body>
+</html>
